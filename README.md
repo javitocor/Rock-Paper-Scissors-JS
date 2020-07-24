@@ -23,7 +23,10 @@
 
 > Classic game ROCK, PAPER, SCISSORS to play in the browser. Built with JavaScript.
 
+Game:
 ![screenshot](./assets/screenshot1.png)
+Instructions:
+![screenshot](./assets/screenshot2.png)
 
 Additional description about the project and its features.
 
