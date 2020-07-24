@@ -119,8 +119,8 @@ function reset() {
     setTimeout(function(){
       playerScore = 0;
       computerScore = 0;
-      compSelect.style.color = '';
-      playerSelect.style.color = '';
+      compSelect.innerHTML = '';
+      playerSelect.innerHTML = '';
       pScore.innerText = playerScore;
       cScore.innerText = computerScore;
       message.innerText = 'Play Again!';
