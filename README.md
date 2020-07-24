@@ -49,7 +49,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link]() :point_left:
+[Live Demo Link](https://raw.githack.com/javitocor/Rock-Paper-Scissors-JS/master/index.html) :point_left:
 
 ## Getting Started
 - Follow the live demo link and enjoy the site.
