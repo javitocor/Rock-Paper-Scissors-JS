@@ -6,6 +6,11 @@
   cursor: pointer;
 }
 
+.modal-body ul li i {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .boards,
 .select {
   display: none;
@@ -17,6 +22,6 @@
 }
 
 html, body {
-  height: 100%;
+  height: 100vh;
 }
 
