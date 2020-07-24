@@ -1,0 +1,22 @@
+.fa-hand-rock,
+.fa-hand-paper,
+.fa-hand-scissors {
+  font-size: 4rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.boards,
+.select {
+  display: none;
+}
+
+#playerSide,
+#computerSide {
+  height: 225px;
+}
+
+html, body {
+  height: 100%;
+}
+
