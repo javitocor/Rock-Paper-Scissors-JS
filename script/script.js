@@ -116,11 +116,16 @@ function whoWon() {
 
 function reset() {
   if (endGame()) {
-    playerScore = 0;
-    computerScore = 0;
-    pScore.innerText = playerScore;
-    cScore.innerText = computerScore;
-    gameActive = false;
+    setTimeout(function(){
+      playerScore = 0;
+      computerScore = 0;
+      compSelect.style.color = '';
+      playerSelect.style.color = '';
+      pScore.innerText = playerScore;
+      cScore.innerText = computerScore;
+      message.innerText = 'Play Again!';
+      gameActive = false;
+    }, 3000);    
   }
 }
 
@@ -136,11 +141,10 @@ function displayBoards() {
   select.style.display = 'block';
   gameActive = true;
 }
-
-
 const rock = document.getElementById('rock');
-rock.addEventListener('click', gameFlow.bind(this, rock.id));
 const paper = document.getElementById('paper');
-paper.addEventListener('click', gameFlow.bind(this, paper.id));
 const scissors = document.getElementById('scissors');
+
+rock.addEventListener('click', gameFlow.bind(this, rock.id));
+paper.addEventListener('click', gameFlow.bind(this, paper.id));
 scissors.addEventListener('click', gameFlow.bind(this, scissors.id));
