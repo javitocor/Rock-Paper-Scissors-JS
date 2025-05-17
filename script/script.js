@@ -7,6 +7,7 @@ const playerSelect = document.getElementById('playerSelect');
 const message = document.getElementById('message');
 let gameActive = false;
 
+
 function computerPlay() {
   let arr = [1, 2, 3];
   let random = arr[Math.floor(Math.random() * arr.length)];
@@ -23,6 +24,7 @@ function computerPlay() {
   }
   return value;
 }
+
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -42,6 +44,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+
 function gameFlow(playerSelection) {
   const winner = selection(playerSelection);
   const result = winner.winner;
@@ -54,6 +57,7 @@ function gameFlow(playerSelection) {
   reset();
 }
 
+
 function selection(playerSelection) {
   let computer = computerPlay();
   let winner = playRound(playerSelection, computer)
@@ -63,15 +67,16 @@ function selection(playerSelection) {
   };
 }
 
+
 function displaySelection(player, selection, result) {
   if (player === 'player') {
-    playerSelect.innerHTML = `<i class="fas fa-hand-${selection}"></i>`;
+    playerSelect.innerHTML = `<i class="far fa-hand-${selection}"></i>`;
     if (result === "Player won!") {
       playerSelect.style.color = 'green';
       compSelect.style.color = 'red';
     }
   } else {
-    compSelect.innerHTML = `<i class="fas fa-hand-${selection}"></i>`;
+    compSelect.innerHTML = `<i class="far fa-hand-${selection}"></i>`;
     if (result === "Computer won!") {
       compSelect.style.color = 'green';
       playerSelect.style.color = 'red';
@@ -82,6 +87,7 @@ function displaySelection(player, selection, result) {
     playerSelect.style.color = '';
   }
 }
+
 
 function scoreBoard(result) {
   if (result === "Player won!") {
@@ -97,12 +103,14 @@ function scoreBoard(result) {
   }
 }
 
+
 function endGame() {
   if (playerScore === 5 || computerScore === 5) {
     return true
   }
   return false;
 }
+
 
 function whoWon() {
   if (endGame()) {
@@ -113,6 +121,7 @@ function whoWon() {
     }
   }
 }
+
 
 function reset() {
   if (endGame()) {
@@ -125,12 +134,14 @@ function reset() {
       cScore.innerText = computerScore;
       message.innerText = 'Play Again!';
       gameActive = false;
-    }, 3000);    
+    }, 3000);
   }
 }
 
+
 const submit = document.getElementById('submit');
 submit.addEventListener('click', displayBoards.bind(this));
+
 
 function displayBoards() {
   const start = document.getElementById('start');
@@ -145,6 +156,17 @@ const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 
+
 rock.addEventListener('click', gameFlow.bind(this, rock.id));
 paper.addEventListener('click', gameFlow.bind(this, paper.id));
 scissors.addEventListener('click', gameFlow.bind(this, scissors.id));
+
+
+document.querySelectorAll('.clickable-icon').forEach(icon => {
+  icon.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault(); // prevent page scroll on space
+      this.click();
+    }
+  });
+});

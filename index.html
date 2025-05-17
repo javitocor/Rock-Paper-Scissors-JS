@@ -10,9 +10,9 @@
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
-      <span class="navbar-brand mb-0 h1">Rock Paper Scissors</span>
+      <span class="navbar-brand mb-0 h1 bold">Rock Paper Scissors</span>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+      <button type="button" class="btn btn-dark bold" data-toggle="modal" data-target="#exampleModalCenter">
         Instructions
       </button>
     </nav>
@@ -21,31 +21,31 @@
     </div>
     <div id="message" class="text-center h5"></div>
     <div class="text-center m-5" id="start">
-      <input type="submit" id="submit" class="btn btn-dark" value="Get Started!">
+      <input type="submit" id="submit" class="btn btn-dark bold" value="Get Started!">
     </div>
     <div id="boards" class="boards">
-      <div class="row">        
-        <div class="col-6 text-center"> 
-          <h1 class="text-center my-3">Player1</h1>  
+      <div class="row">
+        <div class="col-6 text-center">
+          <h1 class="text-center my-3">Player1</h1>
           <div id='playerSide'>
             <h3 id="playerScore"></h3>
             <div id="playerSelect"></div>
-          </div>  
+          </div>
         </div>
-        <div class="col-6 text-center p-0"> 
-          <h1 class="text-center my-3">Computer</h1> 
+        <div class="col-6 text-center p-0">
+          <h1 class="text-center my-3">Computer</h1>
           <div id='computerSide'>
             <h3 id="computerScore"></h3>
             <div id="computerSelect"></div>
-          </div>       
+          </div>
         </div>
       </div>
     </div>
     <div id="select" class="text-center w-50 mx-auto my-3 select">
       <div class="row">
-        <div id="rock" class="col-4"><i class="fas fa-hand-rock"></i></div>
-        <div id="paper" class="col-4"><i class="fas fa-hand-paper"></i></div>
-        <div id="scissors" class="col-4"><i class="fas fa-hand-scissors"></i></div>
+        <div id="rock" class="col-4 default-icon-color clickable-icon" tabindex="0"><i class="fas fa-hand-rock"></i></div>
+        <div id="paper" class="col-4 default-icon-color clickable-icon" tabindex="0"><i class="fas fa-hand-paper"></i></div>
+        <div id="scissors" class="col-4 default-icon-color clickable-icon" tabindex="0"><i class="fas fa-hand-scissors"></i></div>
       </div>
     </div>
     <!-- Modal -->
@@ -74,7 +74,7 @@
             </div>
           </div>
         </div>
-    </div>    
+    </div>
     <!-- end Modal -->
     <footer class="bg-dark">
       <p>Author:&copy; JaviCorp<br>
@@ -83,6 +83,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./script/script.js"></script> 
+    <script type="text/javascript" src="./script/script.js"></script>
   </body>
-</html>
