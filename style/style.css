@@ -1,9 +1,24 @@
 .fa-hand-rock,
 .fa-hand-paper,
 .fa-hand-scissors {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: bolder;
   cursor: pointer;
+}
+
+.clickable-icon i {
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.clickable-icon:hover i {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+.default-icon-color {
+    color: #ffdc5d;
 }
 
 .modal-body ul li i {
@@ -40,3 +55,7 @@ footer {
   width: 100%;
 }
 
+.bold {
+    font-weight:bold;
+    font-size: 2rem;
+}
