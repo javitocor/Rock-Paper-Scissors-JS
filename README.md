@@ -19,16 +19,76 @@
 [![Issues][issues-shield]][issues-url]
 ![Hireable](https://cdn.rawgit.com/hiendv/hireable/master/styles/default/yes.svg)
 
-# ROCK PAPER SCISSORS
+# Rock Paper Scissors Game
 
-> Classic game ROCK, PAPER, SCISSORS to play in the browser. Built with JavaScript.
+A modern, interactive Rock Paper Scissors game built with HTML, CSS, and JavaScript. This is a recoded version with enhanced features, perfect for JavaScript learners who want to understand game development concepts.
 
-Game:
-![screenshot](./assets/screenshot1.png)
-Instructions:
-![screenshot](./assets/screenshot2.png)
+## Why This Version?
 
-Additional description about the project and its features.
+This project is a reimagined version of the classic Rock Paper Scissors game, featuring:
+- 🎯 Clean, modern code structure for easy learning
+- 🔄 Real-time game state management
+- 📊 Session-based history tracking
+- ⚡ Performance optimized animations
+- 🎨 CSS variables for easy theming
+- 🎮 Two distinct game modes for varied gameplay
+
+## Features
+
+- 🎮 Two game modes: Normal and Challenge
+- 🎯 First to 5 points wins
+- 🎲 Random computer choices
+- 📊 Game statistics and history tracking
+- 🔊 Sound effects for choices
+- ⏱️ Timer in Challenge mode
+- 📱 Responsive design for all devices
+
+## Learning Points
+
+This project demonstrates several important JavaScript concepts:
+- Event handling and delegation
+- DOM manipulation
+- Game state management
+- Local storage for persistence
+- CSS animations and transitions
+- Sound API integration
+- Timer implementation
+- Responsive design principles
+
+## How to Play
+
+1. Choose between Normal or Challenge mode
+2. Click on Rock, Paper, or Scissors to make your move
+3. First player to reach 5 points wins
+4. View your game history and statistics
+5. Toggle sound effects on/off
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Font Awesome Icons
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/rickyzakariap/Rock-Paper-Scissors-JS.git
+```
+
+2. Open `index.html` in your browser or use a local server:
+```bash
+python -m http.server 8000
+```
+
+## Author
+
+Created by [Ricky](https://github.com/rickyzakariap)
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 ## Built With
 
@@ -87,10 +147,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - The Odin Project
-
-## 📝 License
-
-This project is [MIT](lic.url) licensed.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

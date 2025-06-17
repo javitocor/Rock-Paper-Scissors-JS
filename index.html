@@ -4,85 +4,130 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="./style/style.css">
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <span class="navbar-brand mb-0 h1">Rock Paper Scissors</span>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
-        Instructions
-      </button>
-    </nav>
-    <div class="text-center mt-3">
-      <h1>WELCOME TO ROCK PAPER SCISSORS GAME!</h1>
-    </div>
-    <div id="message" class="text-center h5"></div>
-    <div class="text-center m-5" id="start">
-      <input type="submit" id="submit" class="btn btn-dark" value="Get Started!">
-    </div>
-    <div id="boards" class="boards">
-      <div class="row">        
-        <div class="col-6 text-center"> 
-          <h1 class="text-center my-3">Player1</h1>  
-          <div id='playerSide'>
-            <h3 id="playerScore"></h3>
-            <div id="playerSelect"></div>
-          </div>  
-        </div>
-        <div class="col-6 text-center p-0"> 
-          <h1 class="text-center my-3">Computer</h1> 
-          <div id='computerSide'>
-            <h3 id="computerScore"></h3>
-            <div id="computerSelect"></div>
-          </div>       
-        </div>
+    <header>
+      <h1>Rock Paper Scissors</h1>
+      <div class="header-buttons">
+        <button id="instructionsBtn" class="btn"><i class="fas fa-book"></i> How to Play</button>
+        <button id="historyBtn" class="btn"><i class="fas fa-history"></i> History</button>
       </div>
-    </div>
-    <div id="select" class="text-center w-50 mx-auto my-3 select">
-      <div class="row">
-        <div id="rock" class="col-4"><i class="fas fa-hand-rock"></i></div>
-        <div id="paper" class="col-4"><i class="fas fa-hand-paper"></i></div>
-        <div id="scissors" class="col-4"><i class="fas fa-hand-scissors"></i></div>
-      </div>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Game Instructions</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-dark">Click 'Get Started' button.</li>
-                <li class="list-group-item list-group-item-dark">Choose between Rock, Paper or Scissors by clicking in the icon.</li>
-                <li class="list-group-item list-group-item-dark"><i class="fas fa-hand-rock"></i> Rock beats Scissors.</li>
-                <li class="list-group-item list-group-item-dark"><i class="fas fa-hand-scissors"></i> Scissors beats Paper.</li>
-                <li class="list-group-item list-group-item-dark"><i class="fas fa-hand-paper"></i> Paper beats Rock.</li>
-                <li class="list-group-item list-group-item-dark">First player to win 5 rounds is the winner.</li>
-                <li class="list-group-item list-group-item-dark">Play again!</li>
-              </ul>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-            </div>
+    </header>
+
+    <main>
+      <div id="start" class="start-screen">
+        <h2>Welcome to Rock Paper Scissors!</h2>
+        <div class="game-modes">
+          <button id="startBtn" class="btn btn-primary"><i class="fas fa-play"></i> Start Game</button>
+          <button id="challengeBtn" class="btn btn-secondary"><i class="fas fa-trophy"></i> Challenge Mode</button>
+        </div>
+        <div class="quick-stats">
+          <div class="stat-item">
+            <i class="fas fa-trophy"></i>
+            <span id="totalWins">0</span> Wins
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-gamepad"></i>
+            <span id="totalGames">0</span> Games
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-percentage"></i>
+            <span id="winRate">0</span>% Win Rate
           </div>
         </div>
-    </div>    
-    <!-- end Modal -->
-    <footer class="bg-dark">
-      <p>Author:&copy; JaviCorp<br>
-        <a href="mailto:hege@example.com">javicorp@example.com</a></p>
+      </div>
+
+      <div id="game" class="game-screen hidden">
+        <div class="game-info">
+          <div class="round-info">
+            Round <span id="currentRound">1</span>/5
+          </div>
+          <div class="timer" id="timer">30</div>
+        </div>
+
+        <div class="score-board">
+          <div class="player">
+            <h3>You</h3>
+            <div id="playerScore" class="score">0</div>
+            <div id="playerChoice" class="choice"></div>
+            <div class="choice-history" id="playerHistory"></div>
+          </div>
+          <div class="vs">VS</div>
+          <div class="computer">
+            <h3>Computer</h3>
+            <div id="computerScore" class="score">0</div>
+            <div id="computerChoice" class="choice"></div>
+            <div class="choice-history" id="computerHistory"></div>
+          </div>
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <div class="choices">
+          <button id="rock" class="choice-btn" title="Rock"><i class="fas fa-hand-rock"></i></button>
+          <button id="paper" class="choice-btn" title="Paper"><i class="fas fa-hand-paper"></i></button>
+          <button id="scissors" class="choice-btn" title="Scissors"><i class="fas fa-hand-scissors"></i></button>
+        </div>
+
+        <div class="game-controls">
+          <button id="resetBtn" class="btn btn-secondary"><i class="fas fa-redo"></i> Reset Game</button>
+          <button id="soundToggle" class="btn btn-secondary"><i class="fas fa-volume-up"></i></button>
+        </div>
+      </div>
+    </main>
+
+    <div id="instructions" class="modal hidden">
+      <div class="modal-content">
+        <h2>How to Play</h2>
+        <ul>
+          <li>Choose Rock, Paper, or Scissors</li>
+          <li><i class="fas fa-hand-rock"></i> Rock beats Scissors</li>
+          <li><i class="fas fa-hand-scissors"></i> Scissors beats Paper</li>
+          <li><i class="fas fa-hand-paper"></i> Paper beats Rock</li>
+          <li>First to 5 wins!</li>
+        </ul>
+        <div class="tips">
+          <h3>Pro Tips:</h3>
+          <ul>
+            <li>Watch the computer's pattern!</li>
+            <li>Don't be too predictable</li>
+            <li>Use the timer to your advantage</li>
+          </ul>
+        </div>
+        <button id="closeInstructions" class="btn">Got it!</button>
+      </div>
+    </div>
+
+    <div id="history" class="modal hidden">
+      <div class="modal-content">
+        <h2>Game History</h2>
+        <div class="session-summary">
+          <div><strong>Session Win Rate:</strong> <span id="sessionWinRate">0%</span></div>
+          <div><strong>Total Games:</strong> <span id="sessionTotalGames">0</span></div>
+          <div><strong>Your Wins:</strong> <span id="sessionWins">0</span></div>
+          <div><strong>Computer Wins:</strong> <span id="sessionLosses">0</span></div>
+        </div>
+        <div class="history-list">
+          <h3>Recent Games</h3>
+          <ul id="historyList"></ul>
+        </div>
+        <button id="closeHistory" class="btn">Close</button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <p>Created with ❤️ by Rick</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./script/script.js"></script> 
+
+    <script src="./script/script.js"></script>
   </body>
 </html>
